@@ -1,0 +1,25 @@
+# Visual Studio / IDE
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.idea/
+.vscode/
+
+# Build folders
+bin/
+obj/
+
+# Test projects
+Tests/
+
+# NuGet packages
+**/packages/*
+
+# Docker / env
+Dockerfile
+.env
+
+# Git
+.git/

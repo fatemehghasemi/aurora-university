@@ -1,0 +1,38 @@
+version: '3.9'
+
+services:
+  aurora-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: aurora-api
+    ports:
+      - "5050:8080"
+    depends_on:
+      - postgres
+    environment:
+      - ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=aurora;Username=postgres;Password=postgrespass
+      - ASPNETCORE_ENVIRONMENT=Development
+    networks:
+      - aurora-net
+
+  postgres:
+    image: postgres:15
+    container_name: aurora-postgres
+    restart: always
+    environment:
+      POSTGRES_DB: aurora
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgrespass
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - aurora-net
+
+volumes:
+  pgdata:
+
+networks:
+  aurora-net:

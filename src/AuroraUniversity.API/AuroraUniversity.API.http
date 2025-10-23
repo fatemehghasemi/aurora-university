@@ -1,0 +1,6 @@
+@AuroraUniversity.API_HostAddress = http://localhost:5206
+
+GET {{AuroraUniversity.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
