@@ -18,11 +18,6 @@ obj/
 [Dd]ebug*/
 [Rr]elease*/
 
-# ------------------------------
-# Project-specific folders
-# ------------------------------
-# Ignore test projects in Docker context and Git
-Tests/
 
 # ------------------------------
 # NuGet packages
